@@ -73,22 +73,22 @@ public class FragmentRed extends Fragment implements FragmentCallbacks {
             Log.e("RED BUNDLE ERROR - ", "" + e.getMessage());
         }
 
-//        btnFirst =(Button) view_layout_red.findViewById(R.id.button1Red);
-//        btnFirst.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                String redMessage = items[0];
-//                String redName = hoten[0];
-//                String redClass = lop[0];
-//                String redGrade = Integer.toString(diem[0]);
-//                txtRed.setText(redMessage);
-//                txtName.setText(redName);
-//                txtLop.setText(redClass);
-//                txtDiem.setText(redGrade);
-//                main.onMsgFromFragToMain("RED-FRAG", );
-//            }
-//        });
+        btnFirst =(Button) view_layout_red.findViewById(R.id.button1Red);
+        btnFirst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String strPos = "0";
+                String redMessage = items[0];
+                String redName = hoten[0];
+                String redClass = lop[0];
+                String redGrade = Integer.toString(diem[0]);
+                txtRed.setText(redMessage);
+                txtName.setText(redName);
+                txtLop.setText(redClass);
+                txtDiem.setText(redGrade);
+                main.onMsgFromFragToMain("RED-FRAG", redMessage, strPos );
+            }
+        });
 
         btnPrevious = (Button) view_layout_red.findViewById(R.id.buttonPrevious);
 
@@ -109,22 +109,26 @@ public class FragmentRed extends Fragment implements FragmentCallbacks {
                 txtDiem.setText(redGrade);
                 main.onMsgFromFragToMain("RED-FRAG", redMessage, strPos );
                 int pos = getOnMsgFromMainToFragment(redMessage, strPos);
-                //String redMessage = items[];
+
             }
         });
 
-//        btnLast = (Button) view_layout_red.findViewById(R.id.buttonLast);
-//        btnLast.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public  void onClick (View view){
-//                String redMessage = items [7];
-//                String redName = hoten[7];
-//                String redClass = lop[7];
-//                String redGrade = Integer.toString(diem[7]);
-//                txtRed.setText(redMessage);
-//                main.onMsgFromFragToMain("RED-FRAG", redMessage);
-//            }
-//        });
+        btnLast = (Button) view_layout_red.findViewById(R.id.buttonLast);
+        btnLast.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick (View view){
+                String strPos = "0";
+                String redMessage = items [7];
+                String redName = "Họ và tên: " + hoten[7];
+                String redClass = "Lớp: " + lop[7];
+                String redGrade = "Điểm Trung Bình: " + Integer.toString(diem[7]);
+                txtRed.setText(redMessage);
+                txtName.setText(redName);
+                txtLop.setText(redClass);
+                txtDiem.setText(redGrade);
+                main.onMsgFromFragToMain("RED-FRAG", redMessage, strPos);
+            }
+        });
 
 //        btnRedClock = (Button) view_layout_red.findViewById(R.id.button1Red);
 //        btnRedClock.setOnClickListener(new View.OnClickListener() {
