@@ -11,8 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+
 
 
 public class FragmentRed extends Fragment implements FragmentCallbacks {
@@ -20,7 +19,7 @@ public class FragmentRed extends Fragment implements FragmentCallbacks {
     TextView txtRed;
     Button btnRedClock;
 
-    public Map<String, String> mapHoten = new HashMap<String, String >();
+
 
 
     public static FragmentRed newInstance(String strArg1) {
