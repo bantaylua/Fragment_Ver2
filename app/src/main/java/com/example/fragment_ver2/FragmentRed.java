@@ -79,9 +79,9 @@ public class FragmentRed extends Fragment implements FragmentCallbacks {
             public void onClick(View view) {
                 String strPos = "0";
                 String redMessage = items[0];
-                String redName = hoten[0];
-                String redClass = lop[0];
-                String redGrade = Integer.toString(diem[0]);
+                String redName = "Họ và tên: " + hoten[0];
+                String redClass = "Lớp: " + lop[0];
+                String redGrade = "Điểm Trung Bình: " + Integer.toString(diem[0]);
                 txtRed.setText(redMessage);
                 txtName.setText(redName);
                 txtLop.setText(redClass);
@@ -91,7 +91,21 @@ public class FragmentRed extends Fragment implements FragmentCallbacks {
         });
 
         btnPrevious = (Button) view_layout_red.findViewById(R.id.buttonPrevious);
-
+        btnPrevious.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String strPos = "0";
+                String redMessage = items[0];
+                String redName = "Họ và tên: " + hoten[0];
+                String redClass = "Lớp: " + lop[0];
+                String redGrade = "Điểm Trung Bình: " + Integer.toString(diem[0]);
+                txtRed.setText(redMessage);
+                txtName.setText(redName);
+                txtLop.setText(redClass);
+                txtDiem.setText(redGrade);
+                main.onMsgFromFragToMain("RED-FRAG", redMessage, strPos );
+            }
+        });
 
         btnNext = (Button) view_layout_red.findViewById(R.id.buttonNext);
         btnNext.setOnClickListener(new View.OnClickListener() {
@@ -99,16 +113,16 @@ public class FragmentRed extends Fragment implements FragmentCallbacks {
             public void onClick(View view) {
                 //int pos = 0;
                 String strPos = "0";
-                String redMessage = items[0];
-                String redName = hoten[0];
-                String redClass = lop[0];
-                String redGrade = Integer.toString(diem[0]);
+                String redMessage = items[1];
+                String redName = "Họ và tên: " + hoten[1];
+                String redClass = "Lớp: " +  lop[1];
+                String redGrade = "Điểm Trung Bình: " + Integer.toString(diem[1]);
                 txtRed.setText(redMessage);
                 txtName.setText(redName);
                 txtLop.setText(redClass);
                 txtDiem.setText(redGrade);
                 main.onMsgFromFragToMain("RED-FRAG", redMessage, strPos );
-                int pos = getOnMsgFromMainToFragment(redMessage, strPos);
+
 
             }
         });
