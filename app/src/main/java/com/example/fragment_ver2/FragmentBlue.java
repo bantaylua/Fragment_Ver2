@@ -79,26 +79,28 @@ public class FragmentBlue extends Fragment implements FragmentCallbacks {
                              Bundle savedInstanceState) {
         LinearLayout layout_blue = (LinearLayout) inflater.inflate(R.layout.layout_blue, null);
 
-//        List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
-//        for (int i = 0; i < 8; i++){
-//            HashMap<String, String> hm = new HashMap<String, String>();
-//            hm.put("ma_so", items[i]);
-//            hm.put("hinh_anh", Integer.toString(lvImage[i]));
-//            aList.add(hm);
-//        }
-//        String[] from = {"ma_so", "hinh_anh"};
-//        int[] to = {R.id.listview_title, R.id.listview_image};
-        //SimpleAdapter simpleAdapter = new SimpleAdapter(getBaseContext(), aList, R.layout.layout_image, from, to);
-        //ListView androidListView = (ListView) findViewbyId(R.id.listViewBlue);
-        //androidListView.setAdapter(simpleAdapter);
+        List<HashMap<String, String>> aList = new ArrayList<HashMap<String, String>>();
+        for (int i = 0; i < 8; i++){
+            HashMap<String, String> hm = new HashMap<String, String>();
+            hm.put("ma_so", items[i]);
+            hm.put("hinh_anh", Integer.toString(lvImage[i]));
+            aList.add(hm);
+        }
+        String[] from = {"ma_so", "hinh_anh"};
+        int[] to = {R.id.listview_title, R.id.listview_image};
+        SimpleAdapter adapter = new SimpleAdapter(getContext(), aList, R.layout.layout_image, from, to);
+        ListView listView = (ListView) layout_blue.findViewById(R.id.listViewBlue);
+        listView.setAdapter(adapter);
 
         final TextView txtBlue = (TextView) layout_blue.findViewById(R.id.textView1Blue);
-        ListView listView = (ListView) layout_blue.findViewById(R.id.listViewBlue);
+//        ListView listView = (ListView) layout_blue.findViewById(R.id.listViewBlue);
         listView.setBackgroundColor(Color.parseColor("#ffccddff"));
 
-        ArrayAdapter adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, items);
-        //ArrayAdapter<List<HashMap<String, String>>> adapter = new ArrayAdapter<>(context,                )
-        listView.setAdapter(adapter);
+//        ArrayAdapter adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, items);
+//        ArrayAdapter<List<HashMap<String, String>>> adapter = new ArrayAdapter<List<HashMap<String, String>>>(context, android.R.layout.simple_list_item_1, items,
+//                Integer.toString );
+
+//        listView.setAdapter(adapter);
         listView.setSelection(0);
         listView.smoothScrollToPosition(0);
 

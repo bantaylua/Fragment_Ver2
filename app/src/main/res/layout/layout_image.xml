@@ -4,21 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:padding="5dp">
+    >
 
     <ImageView
         android:id="@+id/listview_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
         android:contentDescription="@string/app_name"
-        android:padding="10dp"/>
+        android:maxWidth="42dp"
+        android:maxHeight="42dp"
+        />
 
     <LinearLayout
         android:id="@+id/layout_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="5dp">
+        >
 
         <TextView
             android:id="@+id/listview_title"
