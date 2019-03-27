@@ -23,34 +23,33 @@
 
         <Button
             android:id="@+id/button1Red"
-            android:layout_width="wrap_content"
+            android:layout_width="12mm"
             android:layout_height="wrap_content"
-
-            android:padding="0dp"
+            android:ems="2"
             android:text="First"
             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
         <Button
             android:id="@+id/buttonPrevious"
-            android:layout_width="wrap_content"
+            android:layout_width="13mm"
             android:layout_height="wrap_content"
-
+            android:ems="4"
             android:text="Previous"
             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
         <Button
             android:id="@+id/buttonNext"
-            android:layout_width="wrap_content"
+            android:layout_width="12mm"
             android:layout_height="wrap_content"
-
+            android:ems="2"
             android:text="Next"
             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
         <Button
             android:id="@+id/buttonLast"
-            android:layout_width="wrap_content"
+            android:layout_width="12mm"
             android:layout_height="wrap_content"
-
+            android:ems="2"
             android:text="Last"
             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
